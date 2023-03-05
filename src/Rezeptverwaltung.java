@@ -1,163 +1,33 @@
-/**
- * Klasse zur Generierung eines Objekts für die Rezeptverwaltung. Jede Rezeptverwaltung besitzt je ein Array für Rezepte für Pastagerichte, Fleischgerichte,
- * COcktais und Limonaden
- * @author Timo
- * @version 1
- */
 public class Rezeptverwaltung {
 
-    private BasisRezept[] rezepte;
+    public PastaGericht[] pastaRezepte;
+    public FleischGericht[] fleischRezepte;
+    public Cocktail[] cocktailRezepte;
+    public Limonade[] limonadeRezepte;
 
     public Rezeptverwaltung (){
 
-        rezepte = new BasisRezept[1000];
-
-    }
-
-    public void nehmeRezeptAuf (BasisRezept rezept){
-
-        boolean rezeptAufgenommen = false;
-        for (int i = 0; i < rezepte.length; i++) {
-
-            if (rezepte[i] == null){
-
-                rezepte[i] = rezept;
-                System.out.println("Rezept aufgenommen");
-                rezeptAufgenommen = true;
-                break;
-
-            }
-        }
-        if (rezeptAufgenommen == false){
-            System.out.println("Rezept konnte nicht aufgenommen werden");
-        }
-    }
-
-    /*public void nehmeRezeptAuf (BasisRezept rezept){
-
-        boolean aktualisiert = false;
-        for (int i = 0; i < rezepte.length; i++){
-
-            if (rezepte[i] != null){
-
-                if (rezepte[i].getName().equals(rezept.getName()) && rezepte[i].getTyp().equals(rezept.getTyp())){
-
-                    // Aktualisieren von Rezept
-                    rezepte[i] = rezept;
-                    aktualisiert = true;
-                    break;
-
-                }
-            }
-        }
-
-        if (aktualisiert == false){
-
-            for (int i = 0; i < rezepte.length; i++){
-
-                if (rezepte[i] == null){
-
-                    // Hinzufügen von Rezept
-                    rezepte[i] = rezept;
-                    break;
-
-                }
-            }
-        }
-    }*/
-
-    public void zeigeAlleRezepteAn () {
-
-        for (int i = 0; i < rezepte.length; i++){
-
-            if (rezepte[i] != null){
-
-                System.out.println(rezepte[i].getName());
-
-            }
-        }
-
-    }
-
-    public void loescheRezept (String rezeptname, String rezeptart){
-
-        for (int i = 0; i < rezepte.length; i++){
-
-            if (rezepte[i] != null){
-
-                if (rezepte[i].getName().equals(rezeptname) && rezepte[i].getTyp().equals(rezeptart)){
-
-                    rezepte[i] = null;
-
-                }
-            }
-        }
+        pastaRezepte = new PastaGericht[1000];
+        fleischRezepte = new FleischGericht[1000];
+        cocktailRezepte = new Cocktail[1000];
+        limonadeRezepte = new Limonade[1000];
 
     }
 
     public void zeigeRezeptAn (String rezeptname, String rezeptart){
 
-        for (int i = 0; i < rezepte.length; i++){
-
-            if (rezepte[i] != null){
-
-                if (rezepte[i].getName().equals(rezeptname) && rezepte[i].getTyp().equals(rezeptart)){
-
-                    System.out.println("Anzeige von Rezept:");
-                    System.out.println("Name: " + rezepte[i].getName());
-                    System.out.println("Rezeptart: " + rezepte[i].getTyp());
-                    System.out.print("Zutaten: ");
-                    for (int j = 0; j < rezepte[i].getZutaten().length; j++){
-
-                        System.out.print(rezepte[i].getZutaten()[j].getName() + " ");
-
-                    }
-                }
-            }
-        }
 
     }
 
     public int ermittleAnzahlRezepte (String rezeptart){
 
-        int anzahl = 0;
-
-        for (int i = 0; i < rezepte.length; i++){
-
-            if (rezepte[i] != null){
-
-                if (rezepte[i].getTyp().equals(rezeptart)){
-
-                    anzahl++;
-
-                }
-            }
-        }
-        return anzahl;
+        return 0;
 
     }
 
-    public int ermittleAnzahlRezepte (){
+    public void sucheRezeptNachZutat (Zutat zutat){
 
-        int anzahl = 0;
-
-        for (int i = 0; i < rezepte.length; i++){
-
-            if (rezepte[i] != null){
-
-                anzahl++;
-
-            }
-        }
-        return anzahl;
 
     }
 
-    public BasisRezept[] getRezepte() {
-        return rezepte;
-    }
-
-    public void setRezepte(BasisRezept[] rezepte) {
-        this.rezepte = rezepte;
-    }
 }
