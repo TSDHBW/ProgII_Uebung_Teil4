@@ -27,6 +27,19 @@ public class Main {
 
         System.out.println(rezeptverwaltung.rezepte[2].name);
 
+        Person anto = new Person("Anto", "Pane", "Stuttgart", "14.04.79", 2500);
+        Person karl = new Person("Karl", "Müller", "Sindelfingen", "25.02.92", 2000);
+        Person mia = new Person("Mia", "Schwarz", "Gärtringen", "10.10.85", 2600);
+        Person dieter = new Person("Dieter", "Müller", "Herrenberg", "14.07.70", 2450);
+
+        Mitarbeiterverwaltung mitarbeiterverwaltung = new Mitarbeiterverwaltung();
+        mitarbeiterverwaltung.mitarbeiter.put("Anto", anto);
+        mitarbeiterverwaltung.mitarbeiter.put("Karl", karl);
+        mitarbeiterverwaltung.mitarbeiter.put("Mia", mia);
+        mitarbeiterverwaltung.mitarbeiter.put("Dieter", dieter);
+
+        System.out.println("Gehalt von Mia: " + mitarbeiterverwaltung.mitarbeiter.get("Mia").getGehalt());
+
     }
 
 }
