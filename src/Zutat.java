@@ -10,4 +10,7 @@ public class Zutat {
 
     }
 
+    public Zutat() {
+
+    }
 }

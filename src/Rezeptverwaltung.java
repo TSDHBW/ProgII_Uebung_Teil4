@@ -1,16 +1,10 @@
 public class Rezeptverwaltung {
 
-    public PastaGericht[] pastaRezepte;
-    public FleischGericht[] fleischRezepte;
-    public Cocktail[] cocktailRezepte;
-    public Limonade[] limonadeRezepte;
+    public BasisRezept[] rezepte;
 
     public Rezeptverwaltung (){
 
-        pastaRezepte = new PastaGericht[1000];
-        fleischRezepte = new FleischGericht[1000];
-        cocktailRezepte = new Cocktail[1000];
-        limonadeRezepte = new Limonade[1000];
+        rezepte = new BasisRezept[1000];
 
     }
 
@@ -28,6 +22,25 @@ public class Rezeptverwaltung {
     public void sucheRezeptNachZutat (Zutat zutat){
 
 
+    }
+
+    public void nehmeRezeptAuf (BasisRezept rezept){
+
+        boolean rezeptAufgenommen = false;
+        for (int i = 0; i < rezepte.length; i++) {
+
+            if (rezepte[i] == null){
+
+                rezepte[i] = rezept;
+                System.out.println("Rezept aufgenommen");
+                rezeptAufgenommen = true;
+                break;
+
+            }
+        }
+        if (rezeptAufgenommen == false){
+            System.out.println("Rezept konnte nicht aufgenommen werden");
+        }
     }
 
 }
