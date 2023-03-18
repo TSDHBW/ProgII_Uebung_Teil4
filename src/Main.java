@@ -33,12 +33,12 @@ public class Main {
         Person dieter = new Person("Dieter", "Müller", "Herrenberg", "14.07.70", 2450);
 
         Mitarbeiterverwaltung mitarbeiterverwaltung = new Mitarbeiterverwaltung();
-        mitarbeiterverwaltung.mitarbeiter.put("Anto", anto);
-        mitarbeiterverwaltung.mitarbeiter.put("Karl", karl);
-        mitarbeiterverwaltung.mitarbeiter.put("Mia", mia);
-        mitarbeiterverwaltung.mitarbeiter.put("Dieter", dieter);
+        mitarbeiterverwaltung.mitarbeiter.put("ID1", anto);
+        mitarbeiterverwaltung.mitarbeiter.put("ID2", karl);
+        mitarbeiterverwaltung.mitarbeiter.put("ID3", mia);
+        mitarbeiterverwaltung.mitarbeiter.put("ID4", dieter);
 
-        System.out.println("Gehalt von Mia: " + mitarbeiterverwaltung.mitarbeiter.get("Mia").getGehalt());
+        System.out.println("Gehalt von Mia: " + mitarbeiterverwaltung.mitarbeiter.get("ID3").getGehalt());
 
     }
 
