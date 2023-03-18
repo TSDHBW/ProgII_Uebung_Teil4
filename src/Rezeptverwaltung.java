@@ -8,15 +8,35 @@ public class Rezeptverwaltung {
 
     }
 
-    public void zeigeRezeptAn (String rezeptname, String rezeptart){
+    public void zeigeAlleRezepteAn () {
 
+        for (int i = 0; i < rezepte.length; i++){
+
+            if (rezepte[i] != null){
+
+                System.out.println(rezepte[i].name);
+
+            }
+        }
 
     }
 
     public int ermittleAnzahlRezepte (String rezeptart){
 
-        return 0;
+        int anzahl = 0;
 
+        for (int i = 0; i < rezepte.length; i++){
+
+            if (rezepte[i] != null){
+
+                if (rezepte[i].typ.equals(rezeptart)){
+
+                    anzahl++;
+
+                }
+            }
+        }
+        return anzahl;
     }
 
     public void sucheRezeptNachZutat (Zutat zutat){
@@ -40,6 +60,21 @@ public class Rezeptverwaltung {
         }
         if (rezeptAufgenommen == false){
             System.out.println("Rezept konnte nicht aufgenommen werden");
+        }
+    }
+
+    public void loescheRezept (String rezeptname, String rezeptart){
+
+        for (int i = 0; i < rezepte.length; i++){
+
+            if (rezepte[i] != null){
+
+                if (rezepte[i].name.equals(rezeptname) && rezepte[i].typ.equals(rezeptart)){
+
+                    rezepte[i] = null;
+
+                }
+            }
         }
     }
 
